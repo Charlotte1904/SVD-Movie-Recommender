@@ -22,9 +22,13 @@ It is difficult to determine a pattern and relationship among data points within
 
 **SVD Interpretation**
 
+```bash
+
 For this project, I use K value of 50, which gives me a decent ratings approximation so that each user still gets recommendation, except for five users who have number of ratings higher than 400 movies. 
 U matrix connects users to concepts. Its dimension is user by concept. U matrix presents weight of each concept on each user. For example, my first user has non-zero values for all 50 concepts, meaning that he has watched all movies in these 50 categories. Eigenvectors in U transposed indicate users’ preferences for each concept. For the first user, he has the highest score on the 47th concept, indicates that he likes this concept the most, in which he gives the highest ratings to. We then later multiply his preference on individual concepts to the movie matrix and the movies that belong to that specific concept will naturally have higher estimations. 
 
 V matrix connects movies to concepts. Its dimension is movie by concept. Eigenvectors in this matrix indicate the weight of each concept in each movie. For example, with V transposed, I present the first 50 movies corresponding to 3 concepts. We see that the first movie has higher “relevant” score to the first and the second concept than to the third concept. The higher values the more relevant the movie is to that specific concept. Singular Values express the strength of each concept in the dataset, which is ordered in descending order in a diagonal matrix. Intuitively, the first concept is stronger because the data provides more information about the movies of that genre and the people who like them.
 
 To find the strength of each concept of these movies according to this dataset, Vt matrix is multiplied to S, the singular value matrix. To find what movies each user likes, U matrix is multiplied to the product of Vt and S. Since the estimation matrix is in CSR format, I condensed it by using scipy function “todense” and then take the best 250 estimated ratings to choose from for each user. In order to not recommend already seen movies to the same user, a for loop was enforced that only appends the movieIDs which are not already in the “movies_Seen” dictionary created above. A condition that only recommends 5 new movies to each user was also added in the loop. By comparing to items table, I convert movieIDs to movie titles. As a result, we have a dictionary which has each user maps to a list of 5 movies. 
+
+```
