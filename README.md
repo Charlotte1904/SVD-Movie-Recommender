@@ -1,4 +1,3 @@
-# SVD-Movie-Recommender
 
 ![logo](./Images/recommender.png)
 
