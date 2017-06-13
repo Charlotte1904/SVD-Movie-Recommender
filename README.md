@@ -6,6 +6,7 @@ This project involved using Singular Value Decomposition (SVD) – a dimensional
 The movie dataset was from Movielens and the method was inspired from Antoine Vastel. 
 The dataset is a data frame consists of ten thousand ratings from 943 users on 1682 different movies. 
 The most active user has rated 737 movies and the least active user has rated 20 movies. 
+
 ![logo](./Images/data.png)
 
 **Algorithm**
