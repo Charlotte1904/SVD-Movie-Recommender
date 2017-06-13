@@ -1,5 +1,7 @@
 # SVD-Movie-Recommender
 
+![logo](./Images/recommender.png)
+
 ## **SVD Interpretation**
 
 
