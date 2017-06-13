@@ -3,9 +3,15 @@
 **Dataset**
 
 This project involved using Singular Value Decomposition (SVD) – a dimensionality reduction method -  to generate movie recommendations. Given the ratings of some movies users have watched, I want to determine what other movies they should watch. The primary aim of the task was to understand SVD on an intuitive level and to then compute a Python algorithm on a sparse matrix.
-My movie dataset was from Movielens and most of my code was taken reference from Antoine Vastel. The dataset is a data frame consists of ten thousand ratings from 943 users on 1682 different movies. The most active user has rated 737 movies and the least active user has rated 20 movies. 
+The movie dataset was from Movielens and the method was inspired from Antoine Vastel. 
+The dataset is a data frame consists of ten thousand ratings from 943 users on 1682 different movies. 
+The most active user has rated 737 movies and the least active user has rated 20 movies. 
+
+![logo](./Images/data.png)
 
 **Algorithm**
+
+![logo](./Images/svd.png)
 
 Initially, to prepare for SVD, a user by movie matrix was created. Since not everyone has rated/watched every movie, we have a sparse matrix, which requires special attention to matrix formats while doing decomposition. Subsequently, I created an empty dictionary called “user_Rec” that has userIDs as keys and empty lists as values, so I can later append movie recommendations to. I also created another dictionary called “movies_Seen” that contains all the movies each user has rated to avoid recommending those to them later. 
 For SVD implementation, I resorted to a python package, sparseSVD, which is specifically designed for sparse matrices. In order to use sparseSVD, the movie ratings matrix is modified to be in Compressed Sparse Column (CSC) format by executing scipy sparse tool. SparseSVD returns matrix U transposed, matrix V transposed, and an array of singular values. Following the decomposition, U matrix is transposed to be in (m x k) dimension, and diagonal singular value matrix is created, called S matrix. To prepare for constructing the estimation, U, S, Vt were returned in Compressed Sparse Row (CSR) format. CSC and CSR is similar to each other. For CSC, computers will take each non-zero value column by column and returns column indices, the non-zero values and their row offsets. Whereas CSR, computers will take each non-zero value row by row and returns column indices, the non-zero values and their column offsets. In general, if matrices have more rows than columns, one should employ CSC, otherwise, use CSR. Sparse matrices demand CSC and SCR conversion for efficient and faster computations.
