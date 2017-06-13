@@ -7,7 +7,7 @@ The movie dataset was from Movielens and the method was inspired from Antoine Va
 The dataset is a data frame consists of ten thousand ratings from 943 users on 1682 different movies. 
 The most active user has rated 737 movies and the least active user has rated 20 movies. 
 
-![logo](./Images/data.png)
+
 <img src="./Images/data.png" width="200">
 
 **Algorithm**
