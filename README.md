@@ -1,6 +1,6 @@
 # SVD-Movie-Recommender
 
-<center>**SVD Interpretation**<center>
+## **SVD Interpretation**
 
 
 **For this project, I use K value of 50, which gives me a decent ratings approximation so that each user still gets recommendation, except for five users who have number of ratings higher than 400 movies. 
@@ -13,7 +13,7 @@ U matrix connects users to concepts. Its dimension is user by concept. U matrix 
 
 
 
-**Dataset**
+## **Dataset**
 
 This project involved using Singular Value Decomposition (SVD) – a dimensionality reduction method -  to generate movie recommendations. Given the ratings of some movies users have watched, I want to determine what other movies they should watch. The primary aim of the task was to understand SVD on an intuitive level and to then compute a Python algorithm on a sparse matrix.
 The movie dataset was from Movielens and the method was inspired from Antoine Vastel. 
@@ -23,7 +23,7 @@ The most active user has rated 737 movies and the least active user has rated 20
 
 <img src="./Images/data.png" width="200">
 
-**Algorithm**
+## **Algorithm**
 
 ![logo](./Images/svd1.png)
 
